@@ -36,6 +36,19 @@
                     {% else %}
                         <div class="alert alert-warning text-center">Нет данных о погоде</div>
                     {% endif %}
+
+                    {% if news %}
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h2 class="card-title">Новости</h2>
+                                <ul class="list-group">
+                                    {% for article in news %}
+                                        <li><a href="{{ article['url'] }}"> {{ article['title'] }} </a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
